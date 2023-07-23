@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PokemonApp: App {
+    
+    static let environment = Environment.development
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomepageView()
         }
     }
 }

@@ -51,10 +51,10 @@
 		447022D92A6D2BB1003A10AE /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
-				447022DA2A6D2BB1003A10AE /* PokemonApp.swift */,
-				447022DC2A6D2BB1003A10AE /* ContentView.swift */,
-				447022DE2A6D2BB2003A10AE /* Assets.xcassets */,
-				447022E02A6D2BB2003A10AE /* Preview Content */,
+				447022E82A6D302F003A10AE /* App */,
+				447022EA2A6D304E003A10AE /* Screens */,
+				447022EB2A6D3053003A10AE /* DataAccess */,
+				447022E92A6D303E003A10AE /* Resources */,
 			);
 			path = Pokemon;
 			sourceTree = "<group>";
@@ -65,6 +65,54 @@
 				447022E12A6D2BB2003A10AE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		447022E82A6D302F003A10AE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				447022DA2A6D2BB1003A10AE /* PokemonApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		447022E92A6D303E003A10AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				447022E02A6D2BB2003A10AE /* Preview Content */,
+				447022DE2A6D2BB2003A10AE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		447022EA2A6D304E003A10AE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				447022DC2A6D2BB1003A10AE /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		447022EB2A6D3053003A10AE /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				447022ED2A6D30B6003A10AE /* Cache */,
+				447022EC2A6D30AF003A10AE /* Network */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		447022EC2A6D30AF003A10AE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		447022ED2A6D30B6003A10AE /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +314,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Pokemon/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Pokemon/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,7 +342,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Pokemon/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Pokemon/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -17,6 +17,10 @@
 		447022F52A6D3648003A10AE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447022F42A6D3648003A10AE /* Environment.swift */; };
 		447022FA2A6D3A6C003A10AE /* PokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447022F92A6D3A6C003A10AE /* PokemonRequest.swift */; };
 		447022FE2A6D3EA7003A10AE /* Pokemon+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447022FD2A6D3EA7003A10AE /* Pokemon+Codable.swift */; };
+		447023012A6D4955003A10AE /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447023002A6D4955003A10AE /* HomepageViewModel.swift */; };
+		447023042A6D4A65003A10AE /* MaterialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447023032A6D4A65003A10AE /* MaterialCardView.swift */; };
+		447023062A6D4B21003A10AE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447023052A6D4B21003A10AE /* Colors.xcassets */; };
+		447023092A6D4B64003A10AE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447023082A6D4B64003A10AE /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		447022F42A6D3648003A10AE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		447022F92A6D3A6C003A10AE /* PokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRequest.swift; sourceTree = "<group>"; };
 		447022FD2A6D3EA7003A10AE /* Pokemon+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pokemon+Codable.swift"; sourceTree = "<group>"; };
+		447023002A6D4955003A10AE /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
+		447023032A6D4A65003A10AE /* MaterialCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialCardView.swift; sourceTree = "<group>"; };
+		447023052A6D4B21003A10AE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		447023082A6D4B64003A10AE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +71,12 @@
 		447022D92A6D2BB1003A10AE /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				447023022A6D4A50003A10AE /* UIComponents */,
 				447022E82A6D302F003A10AE /* App */,
 				447022EA2A6D304E003A10AE /* Screens */,
 				447022FB2A6D3E8A003A10AE /* Business */,
 				447022EB2A6D3053003A10AE /* DataAccess */,
+				447023072A6D4B43003A10AE /* Extensions */,
 				447022E92A6D303E003A10AE /* Resources */,
 			);
 			path = Pokemon;
@@ -94,6 +104,7 @@
 			children = (
 				447022E02A6D2BB2003A10AE /* Preview Content */,
 				447022DE2A6D2BB2003A10AE /* Assets.xcassets */,
+				447023052A6D4B21003A10AE /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -101,7 +112,7 @@
 		447022EA2A6D304E003A10AE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				447022DC2A6D2BB1003A10AE /* HomepageView.swift */,
+				447022FF2A6D4939003A10AE /* Homepage */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -173,6 +184,31 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		447022FF2A6D4939003A10AE /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				447022DC2A6D2BB1003A10AE /* HomepageView.swift */,
+				447023002A6D4955003A10AE /* HomepageViewModel.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		447023022A6D4A50003A10AE /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				447023032A6D4A65003A10AE /* MaterialCardView.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		447023072A6D4B43003A10AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				447023082A6D4B64003A10AE /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447023062A6D4B21003A10AE /* Colors.xcassets in Resources */,
 				447022E22A6D2BB2003A10AE /* Preview Assets.xcassets in Resources */,
 				447022DF2A6D2BB2003A10AE /* Assets.xcassets in Resources */,
 			);
@@ -247,10 +284,13 @@
 				447022F52A6D3648003A10AE /* Environment.swift in Sources */,
 				447022EF2A6D31A7003A10AE /* NetworkService.swift in Sources */,
 				447022DB2A6D2BB1003A10AE /* PokemonApp.swift in Sources */,
+				447023012A6D4955003A10AE /* HomepageViewModel.swift in Sources */,
 				447022F32A6D3546003A10AE /* HTTPMethod.swift in Sources */,
 				447022FA2A6D3A6C003A10AE /* PokemonRequest.swift in Sources */,
 				447022FE2A6D3EA7003A10AE /* Pokemon+Codable.swift in Sources */,
 				447022F12A6D32DE003A10AE /* RequestBuilder.swift in Sources */,
+				447023092A6D4B64003A10AE /* Color+Extension.swift in Sources */,
+				447023042A6D4A65003A10AE /* MaterialCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

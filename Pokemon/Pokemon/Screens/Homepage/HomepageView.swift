@@ -10,13 +10,25 @@ import SwiftUI
 struct HomepageView: View {
     
     @StateObject var viewModel = HomepageViewModel()
+    @State private(set) var isPresented: Bool = false
+    @State private var selected: Pokemon?
     
     var body: some View {
         NavigationView {
             ScrollView {
                 ForEach(viewModel.pokemons, id: \.name) { item in
-                    NavigationLink(destination: EmptyView()){
-                        MaterialCardView()
+                    MaterialCardView(title: item.name.capitalized, subtitle: item.url)
+                        .onTapGesture {
+                            selected = item
+                            isPresented.toggle()
+                        }
+                }
+                .sheet(isPresented: Binding(
+                    get: { isPresented },
+                    set: { isPresented = $0 }
+                )) {
+                    if let selected = selected {
+                        ActionSheet(pokemon: selected)
                     }
                 }
             }
@@ -29,8 +41,30 @@ struct HomepageView: View {
     }
 }
 
+struct ActionSheet: View {
+    
+    @State var pokemon: Pokemon
+    
+    var body: some View {
+        VStack {
+            Text("\(pokemon.name)")
+        }
+        .background(Color.blue.opacity(0.3))
+        .onAppear{
+            Task {
+                await HomepageViewModel().getDetailsFor(item: 2)
+            }
+        }
+    }
+    
+}
+
+// MARK: - Preview -
+
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         HomepageView()
     }
+    
 }

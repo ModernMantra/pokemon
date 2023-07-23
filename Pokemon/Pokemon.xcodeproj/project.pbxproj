@@ -21,6 +21,9 @@
 		447023042A6D4A65003A10AE /* MaterialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447023032A6D4A65003A10AE /* MaterialCardView.swift */; };
 		447023062A6D4B21003A10AE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447023052A6D4B21003A10AE /* Colors.xcassets */; };
 		447023092A6D4B64003A10AE /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447023082A6D4B64003A10AE /* Color+Extension.swift */; };
+		4470230C2A6D56F7003A10AE /* PokemonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470230B2A6D56F7003A10AE /* PokemonDetailsView.swift */; };
+		4470230E2A6D5704003A10AE /* PokemonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470230D2A6D5704003A10AE /* PokemonDetailsViewModel.swift */; };
+		447023102A6DAA2F003A10AE /* PokemonDetails+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470230F2A6DAA2F003A10AE /* PokemonDetails+Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		447023032A6D4A65003A10AE /* MaterialCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialCardView.swift; sourceTree = "<group>"; };
 		447023052A6D4B21003A10AE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		447023082A6D4B64003A10AE /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		4470230B2A6D56F7003A10AE /* PokemonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsView.swift; sourceTree = "<group>"; };
+		4470230D2A6D5704003A10AE /* PokemonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewModel.swift; sourceTree = "<group>"; };
+		4470230F2A6DAA2F003A10AE /* PokemonDetails+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PokemonDetails+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +77,6 @@
 		447022D92A6D2BB1003A10AE /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
-				447023022A6D4A50003A10AE /* UIComponents */,
 				447022E82A6D302F003A10AE /* App */,
 				447022EA2A6D304E003A10AE /* Screens */,
 				447022FB2A6D3E8A003A10AE /* Business */,
@@ -112,6 +117,8 @@
 		447022EA2A6D304E003A10AE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4470230A2A6D56E3003A10AE /* Pokemon Details */,
+				447023022A6D4A50003A10AE /* UIComponents */,
 				447022FF2A6D4939003A10AE /* Homepage */,
 			);
 			path = Screens;
@@ -180,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				447022FD2A6D3EA7003A10AE /* Pokemon+Codable.swift */,
+				4470230F2A6DAA2F003A10AE /* PokemonDetails+Codable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +215,15 @@
 				447023082A6D4B64003A10AE /* Color+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4470230A2A6D56E3003A10AE /* Pokemon Details */ = {
+			isa = PBXGroup;
+			children = (
+				4470230B2A6D56F7003A10AE /* PokemonDetailsView.swift */,
+				4470230D2A6D5704003A10AE /* PokemonDetailsViewModel.swift */,
+			);
+			path = "Pokemon Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,12 +298,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				447022DD2A6D2BB1003A10AE /* HomepageView.swift in Sources */,
+				4470230C2A6D56F7003A10AE /* PokemonDetailsView.swift in Sources */,
 				447022F52A6D3648003A10AE /* Environment.swift in Sources */,
 				447022EF2A6D31A7003A10AE /* NetworkService.swift in Sources */,
 				447022DB2A6D2BB1003A10AE /* PokemonApp.swift in Sources */,
 				447023012A6D4955003A10AE /* HomepageViewModel.swift in Sources */,
 				447022F32A6D3546003A10AE /* HTTPMethod.swift in Sources */,
 				447022FA2A6D3A6C003A10AE /* PokemonRequest.swift in Sources */,
+				4470230E2A6D5704003A10AE /* PokemonDetailsViewModel.swift in Sources */,
+				447023102A6DAA2F003A10AE /* PokemonDetails+Codable.swift in Sources */,
 				447022FE2A6D3EA7003A10AE /* Pokemon+Codable.swift in Sources */,
 				447022F12A6D32DE003A10AE /* RequestBuilder.swift in Sources */,
 				447023092A6D4B64003A10AE /* Color+Extension.swift in Sources */,

@@ -9,19 +9,22 @@ import SwiftUI
 
 struct MaterialCardView: View {
     
+    @State var title: String
+    @State var subtitle: String
+    
+    @SwiftUI.Environment (\.colorScheme) var colorScheme: ColorScheme
+    
     var body: some View {
         ZStack {
             // Background color and corner radius
             roundedRectangle
-            
             // Content of the card
             VStack {
                 VStack(alignment: .center) {
-                    title
-                    subtitle
+                    titleView
+                    subtitleView
                 }
                 .padding()
-                
                 Spacer()
             }
         }
@@ -38,20 +41,25 @@ fileprivate extension MaterialCardView {
     var roundedRectangle: some View {
         RoundedRectangle(cornerRadius: 12)
             .foregroundColor(.Background.primary)
-            .shadow(color: .Shadow.primary, radius: 8, x: 0, y: 4)
+            .shadow(
+                color: .Shadow.primary.opacity(colorScheme == .dark ? 0 : 1.0),
+                radius: 8,
+                x: 0,
+                y: 4
+            )
     }
     
     @ViewBuilder
-    var title: some View {
-        Text("Card Title")
+    var titleView: some View {
+        Text(title)
             .font(.title)
             .fontWeight(.bold)
             .foregroundColor(.Text.primary)
     }
     
     @ViewBuilder
-    var subtitle: some View {
-        Text("Description of the card.")
+    var subtitleView: some View {
+        Text(subtitle)
             .font(.subheadline)
             .foregroundColor(.Text.secondary)
     }
@@ -61,7 +69,7 @@ fileprivate extension MaterialCardView {
 struct MaterialCardView_Previews: PreviewProvider {
     
     static var previews: some View {
-        MaterialCardView()
+        MaterialCardView(title: "title", subtitle: "subtitle")
     }
     
 }

@@ -17,7 +17,14 @@ struct PokemonResults: Codable {
 // MARK: - Result
 
 struct Pokemon: Codable {
+    
     let name: String
     let url: String
+}
+
+extension Pokemon: Identifiable {
+    var id: String {
+        UUID().uuidString
+    }
 }
 

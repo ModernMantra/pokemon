@@ -29,7 +29,24 @@ class HomepageViewModel: ObservableObject {
                     print("Error fetching data: \(error)")
                 }
             }, receiveValue: { [weak self] responseData in
-                self?.pokemons = responseData.results
+                self?.pokemons = responseData.results.sorted(by: { $0.name < $1.name })
+            })
+            .store(in: &cancellables)
+    }
+    
+    func getDetailsFor(item id: Int) async {
+        await networkService.getRequest(PokemonRequest.details(forItem: id).request, responseType: PokemonDetails.self)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Error fetching data: \(error)")
+                }
+            }, receiveValue: { [weak self] responseData in
+                print(responseData)
             })
             .store(in: &cancellables)
     }

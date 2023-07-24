@@ -19,8 +19,12 @@ struct TitleText: View {
     }
 }
 
+// MARK: - Preview -
+
 struct TitleView_Previews: PreviewProvider {
+    
     static var previews: some View {
         TitleText(text: "test")
     }
+    
 }

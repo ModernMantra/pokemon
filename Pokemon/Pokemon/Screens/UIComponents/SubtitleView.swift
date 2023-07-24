@@ -22,8 +22,12 @@ struct SubtitleView: View {
     }
 }
 
+// MARK: - Preview -
+
 struct SubtitleView_Previews: PreviewProvider {
+    
     static var previews: some View {
         SubtitleView(titleText: "Title", subtitleText: "subtitle")
     }
+    
 }

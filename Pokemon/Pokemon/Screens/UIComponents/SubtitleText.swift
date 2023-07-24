@@ -16,10 +16,15 @@ struct SubtitleText: View {
             .font(.subheadline)
             .foregroundColor(.Text.secondary)
     }
+    
 }
 
+// MARK: - Preview -
+
 struct SubtitleText_Previews: PreviewProvider {
+    
     static var previews: some View {
         SubtitleText(text: "test")
     }
+    
 }

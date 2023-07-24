@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct ErrorView: View {
-    
+
     let errorMessage: String
     let retryAction: (() -> Void)?
-    
+
     var body: some View {
         VStack {
             Image(systemName: "exclamationmark.triangle.fill")
                 .font(.system(size: 50))
                 .foregroundColor(.red)
-            
+
             Text(errorMessage)
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 .padding()
-            
+
             if let retryAction = retryAction {
                 Button("Retry", action: retryAction)
                     .padding(.top)

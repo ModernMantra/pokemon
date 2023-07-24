@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct HomepageView: View {
-    
+
     @StateObject var viewModel = HomepageViewModel()
-    
+
     @State private(set) var isPresented: Bool = false
     @State private(set) var selected: Pokemon?
-    
+
     var body: some View {
         NavigationView {
             itemsListView
                 .navigationTitle("Pokemons")
         }
-        .onAppear{
+        .onAppear {
             Task {
                 await viewModel.fetchData()
             }
@@ -35,7 +35,7 @@ struct HomepageView: View {
 // MARK: - Subviews -
 
 fileprivate extension HomepageView {
-    
+
     @ViewBuilder
     var itemsListView: some View {
         ScrollView {
@@ -56,15 +56,15 @@ fileprivate extension HomepageView {
             }
         }
     }
-    
+
 }
 
 // MARK: - Preview -
 
 struct ContentView_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         HomepageView()
     }
-    
+
 }

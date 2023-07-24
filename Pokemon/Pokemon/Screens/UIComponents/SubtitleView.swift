@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SubtitleView: View {
-    
+
     @State var titleText: String
     @State var subtitleText: String
-    
+
     var body: some View {
         HStack {
             Text("\(titleText)")

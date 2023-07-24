@@ -29,6 +29,7 @@
 		447023162A6DEC25003A10AE /* SubtitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447023152A6DEC25003A10AE /* SubtitleText.swift */; };
 		447023192A6DEFC6003A10AE /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447023182A6DEFC6003A10AE /* ErrorView.swift */; };
 		4470231B2A6DF24A003A10AE /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470231A2A6DF24A003A10AE /* View+Extension.swift */; };
+		44A03EE22A6EAA9000E6E5B1 /* Sprites+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A03EE12A6EAA9000E6E5B1 /* Sprites+Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		447023152A6DEC25003A10AE /* SubtitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleText.swift; sourceTree = "<group>"; };
 		447023182A6DEFC6003A10AE /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4470231A2A6DF24A003A10AE /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		44A03EE12A6EAA9000E6E5B1 /* Sprites+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sprites+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				447022FD2A6D3EA7003A10AE /* Pokemon+Codable.swift */,
 				4470230F2A6DAA2F003A10AE /* PokemonDetails+Codable.swift */,
+				44A03EE12A6EAA9000E6E5B1 /* Sprites+Codable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildPhases = (
 				447022D32A6D2BB1003A10AE /* Sources */,
 				447022D42A6D2BB1003A10AE /* Frameworks */,
+				44A03EE02A6EA9BC00E6E5B1 /* Swiftlint */,
 				447022D52A6D2BB1003A10AE /* Resources */,
 			);
 			buildRules = (
@@ -315,6 +319,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44A03EE02A6EA9BC00E6E5B1 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		447022D32A6D2BB1003A10AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -327,6 +353,7 @@
 				447022EF2A6D31A7003A10AE /* NetworkService.swift in Sources */,
 				447023142A6DEB40003A10AE /* SubtitleView.swift in Sources */,
 				447022DB2A6D2BB1003A10AE /* PokemonApp.swift in Sources */,
+				44A03EE22A6EAA9000E6E5B1 /* Sprites+Codable.swift in Sources */,
 				447023012A6D4955003A10AE /* HomepageViewModel.swift in Sources */,
 				447023192A6DEFC6003A10AE /* ErrorView.swift in Sources */,
 				447022F32A6D3546003A10AE /* HTTPMethod.swift in Sources */,

@@ -8,14 +8,14 @@
 import Foundation
 
 enum Environment {
-    
+
     case development
-    
+
     var url: URL {
         switch self {
         case .development:
             return URL(string: "https://pokeapi.co/api/v2")!
         }
     }
-    
+
 }

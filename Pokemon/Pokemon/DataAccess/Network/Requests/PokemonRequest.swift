@@ -8,28 +8,28 @@
 import Foundation
 
 enum PokemonRequest: RequestBuilder {
-    
+
     case allItems
     case details(forItem: String)
-    
+
     var path: String {
         switch self {
         case .allItems:
             return "/pokemon"
-            
+
         case .details(let item):
             return "/pokemon/\(item)"
         }
     }
-    
+
     var request: URLRequest {
         let url = baseURL.appendingPathComponent(path)
         var request = URLRequest(url: url)
-        
+
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
+
         return request
     }
-    
+
 }

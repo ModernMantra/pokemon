@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ErrorViewModifier: ViewModifier {
+
     @Binding var error: Error?
     let retryAction: (() -> Void)?
-    
+
     func body(content: Content) -> some View {
         ZStack {
             content
@@ -26,7 +27,9 @@ struct ErrorViewModifier: ViewModifier {
 }
 
 extension View {
+
     func observeError(_ error: Binding<Error?>, retryAction: (() -> Void)? = nil) -> some View {
         self.modifier(ErrorViewModifier(error: error, retryAction: retryAction))
     }
+
 }

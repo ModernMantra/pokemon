@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MaterialCardView: View {
-    
+
     @State var title: String
     @State var subtitle: String
-    
+
     @SwiftUI.Environment (\.colorScheme) var colorScheme: ColorScheme
-    
+
     var body: some View {
         ZStack {
             // Background color and corner radius
@@ -30,13 +30,13 @@ struct MaterialCardView: View {
         }
         .padding()
     }
-    
+
 }
 
 // MARK: - Sub-components -
 
 fileprivate extension MaterialCardView {
-    
+
     @ViewBuilder
     var roundedRectangle: some View {
         RoundedRectangle(cornerRadius: 12)
@@ -48,23 +48,23 @@ fileprivate extension MaterialCardView {
                 y: 4
             )
     }
-    
+
     @ViewBuilder
     var titleView: some View {
         TitleText(text: title)
     }
-    
+
     @ViewBuilder
     var subtitleView: some View {
         SubtitleText(text: subtitle)
     }
-    
+
 }
 
 struct MaterialCardView_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         MaterialCardView(title: "title", subtitle: "subtitle")
     }
-    
+
 }

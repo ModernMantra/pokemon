@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 class NetworkService {
-    
+
     private let session: URLSession
-    
+
     init(session: URLSession = .shared) {
         self.session = session
     }
-    
+
     func getRequest<T: Decodable>(_ request: URLRequest, responseType: T.Type) async -> AnyPublisher<T, Error> {
         session.dataTaskPublisher(for: request)
             .tryMap { (data, response) -> Data in
@@ -28,5 +28,5 @@ class NetworkService {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-    
+
 }

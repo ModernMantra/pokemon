@@ -8,7 +8,7 @@
 import Foundation
 
 struct PokemonDetails: Codable {
-    
+
     let abilities: [Ability]
     let baseExperience: Int
     let forms: [Species]
@@ -42,13 +42,13 @@ struct PokemonDetails: Codable {
         case pastTypes = "past_types"
         case species, sprites, stats, types, weight
     }
-    
+
 }
 
 // MARK: - HeldItem
 
 struct HeldItem: Codable {
-    
+
     let item: Species
     let versionDetails: [VersionDetail]
 
@@ -56,22 +56,22 @@ struct HeldItem: Codable {
         case item
         case versionDetails = "version_details"
     }
-    
+
 }
 
 // MARK: - VersionDetail
 
 struct VersionDetail: Codable {
-    
+
     let rarity: Int
     let version: Species
-    
+
 }
 
 // MARK: - Ability
 
 struct Ability: Codable {
-    
+
     let ability: Species
     let isHidden: Bool
     let slot: Int
@@ -81,21 +81,21 @@ struct Ability: Codable {
         case isHidden = "is_hidden"
         case slot
     }
-    
+
 }
 
 // MARK: - Species
 struct Species: Codable {
-    
+
     let name: String
     let url: String
-    
+
 }
 
 // MARK: - GameIndex
 
 struct GameIndex: Codable {
-    
+
     let gameIndex: Int
     let version: Species
 
@@ -103,13 +103,13 @@ struct GameIndex: Codable {
         case gameIndex = "game_index"
         case version
     }
-    
+
 }
 
 // MARK: - Move
 
 struct Move: Codable {
-    
+
     let move: Species
     let versionGroupDetails: [VersionGroupDetail]
 
@@ -117,13 +117,13 @@ struct Move: Codable {
         case move
         case versionGroupDetails = "version_group_details"
     }
-    
+
 }
 
 // MARK: - VersionGroupDetail
 
 struct VersionGroupDetail: Codable {
-    
+
     let levelLearnedAt: Int
     let moveLearnMethod, versionGroup: Species
 
@@ -132,25 +132,25 @@ struct VersionGroupDetail: Codable {
         case moveLearnMethod = "move_learn_method"
         case versionGroup = "version_group"
     }
-    
+
 }
 
 // MARK: - GenerationV
 
 struct GenerationV: Codable {
-    
+
     let blackWhite: Sprites
 
     enum CodingKeys: String, CodingKey {
         case blackWhite = "black-white"
     }
-    
+
 }
 
 // MARK: - GenerationIv
 
 struct GenerationIv: Codable {
-    
+
     let diamondPearl, heartgoldSoulsilver, platinum: Sprites
 
     enum CodingKeys: String, CodingKey {
@@ -158,13 +158,13 @@ struct GenerationIv: Codable {
         case heartgoldSoulsilver = "heartgold-soulsilver"
         case platinum
     }
-    
+
 }
 
 // MARK: - Versions
 
 struct Versions: Codable {
-    
+
     let generationI: GenerationI
     let generationIi: GenerationIi
     let generationIii: GenerationIii
@@ -184,70 +184,26 @@ struct Versions: Codable {
         case generationVii = "generation-vii"
         case generationViii = "generation-viii"
     }
-    
-}
 
-// MARK: - Sprites
-
-class Sprites: Codable {
-    
-    let backDefault: String
-    let backFemale: String?
-    let backShiny: String
-    let backShinyFemale: String?
-    let frontDefault: String
-    let frontFemale: String?
-    let frontShiny: String
-    let frontShinyFemale: String?
-    let other: Other?
-    let versions: Versions?
-    let animated: Sprites?
-
-    enum CodingKeys: String, CodingKey {
-        case backDefault = "back_default"
-        case backFemale = "back_female"
-        case backShiny = "back_shiny"
-        case backShinyFemale = "back_shiny_female"
-        case frontDefault = "front_default"
-        case frontFemale = "front_female"
-        case frontShiny = "front_shiny"
-        case frontShinyFemale = "front_shiny_female"
-        case other, versions, animated
-    }
-
-    init(backDefault: String, backFemale: String?, backShiny: String, backShinyFemale: String?, frontDefault: String, frontFemale: String?, frontShiny: String, frontShinyFemale: String?, other: Other?, versions: Versions?, animated: Sprites?) {
-        self.backDefault = backDefault
-        self.backFemale = backFemale
-        self.backShiny = backShiny
-        self.backShinyFemale = backShinyFemale
-        self.frontDefault = frontDefault
-        self.frontFemale = frontFemale
-        self.frontShiny = frontShiny
-        self.frontShinyFemale = frontShinyFemale
-        self.other = other
-        self.versions = versions
-        self.animated = animated
-    }
-    
 }
 
 // MARK: - GenerationI
 
 struct GenerationI: Codable {
-    
+
     let redBlue, yellow: RedBlue
 
     enum CodingKeys: String, CodingKey {
         case redBlue = "red-blue"
         case yellow
     }
-    
+
 }
 
 // MARK: - RedBlue
 
 struct RedBlue: Codable {
-    
+
     let backDefault, backGray, backTransparent, frontDefault: String
     let frontGray, frontTransparent: String
 
@@ -259,22 +215,22 @@ struct RedBlue: Codable {
         case frontGray = "front_gray"
         case frontTransparent = "front_transparent"
     }
-    
+
 }
 
 // MARK: - GenerationIi
 
 struct GenerationIi: Codable {
-    
+
     let crystal: Crystal
     let gold, silver: Gold
-    
+
 }
 
 // MARK: - Crystal
 
 struct Crystal: Codable {
-    
+
     let backDefault, backShiny, backShinyTransparent, backTransparent: String
     let frontDefault, frontShiny, frontShinyTransparent, frontTransparent: String
 
@@ -288,13 +244,13 @@ struct Crystal: Codable {
         case frontShinyTransparent = "front_shiny_transparent"
         case frontTransparent = "front_transparent"
     }
-    
+
 }
 
 // MARK: - Gold
 
 struct Gold: Codable {
-    
+
     let backDefault, backShiny, frontDefault, frontShiny: String
     let frontTransparent: String?
 
@@ -305,13 +261,13 @@ struct Gold: Codable {
         case frontShiny = "front_shiny"
         case frontTransparent = "front_transparent"
     }
-    
+
 }
 
 // MARK: - GenerationIii
 
 struct GenerationIii: Codable {
-    
+
     let emerald: OfficialArtwork
     let fireredLeafgreen, rubySapphire: Gold
 
@@ -320,26 +276,26 @@ struct GenerationIii: Codable {
         case fireredLeafgreen = "firered-leafgreen"
         case rubySapphire = "ruby-sapphire"
     }
-    
+
 }
 
 // MARK: - OfficialArtwork
 
 struct OfficialArtwork: Codable {
-    
+
     let frontDefault, frontShiny: String
 
     enum CodingKeys: String, CodingKey {
         case frontDefault = "front_default"
         case frontShiny = "front_shiny"
     }
-    
+
 }
 
 // MARK: - Home
 
 struct Home: Codable {
-    
+
     let frontDefault: String
     let frontFemale: String?
     let frontShiny: String
@@ -351,13 +307,13 @@ struct Home: Codable {
         case frontShiny = "front_shiny"
         case frontShinyFemale = "front_shiny_female"
     }
-    
+
 }
 
 // MARK: - GenerationVii
 
 struct GenerationVii: Codable {
-    
+
     let icons: DreamWorld
     let ultraSunUltraMoon: Home
 
@@ -365,12 +321,12 @@ struct GenerationVii: Codable {
         case icons
         case ultraSunUltraMoon = "ultra-sun-ultra-moon"
     }
-    
+
 }
 
 // MARK: - DreamWorld
 struct DreamWorld: Codable {
-    
+
     let frontDefault: String
     let frontFemale: String?
 
@@ -378,7 +334,7 @@ struct DreamWorld: Codable {
         case frontDefault = "front_default"
         case frontFemale = "front_female"
     }
-    
+
 }
 
 // MARK: - GenerationViii
@@ -390,7 +346,7 @@ struct GenerationViii: Codable {
 // MARK: - Other
 
 struct Other: Codable {
-    
+
     let dreamWorld: DreamWorld
     let home: Home
     let officialArtwork: OfficialArtwork
@@ -400,13 +356,13 @@ struct Other: Codable {
         case home
         case officialArtwork = "official-artwork"
     }
-    
+
 }
 
 // MARK: - Stat
 
 struct Stat: Codable {
-    
+
     let baseStat, effort: Int
     let stat: Species
 
@@ -414,14 +370,14 @@ struct Stat: Codable {
         case baseStat = "base_stat"
         case effort, stat
     }
-    
+
 }
 
 // MARK: - TypeElement
 
 struct TypeElement: Codable {
-    
+
     let slot: Int
     let type: Species
-    
+
 }

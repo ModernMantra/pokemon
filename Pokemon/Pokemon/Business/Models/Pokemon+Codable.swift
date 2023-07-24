@@ -17,13 +17,13 @@ struct PokemonResults: Codable {
 // MARK: - Result
 
 struct Pokemon: Codable {
-    
+
     let name: String
     let url: String
 }
 
 extension Pokemon: Equatable {
-    
+
 }
 
 extension Pokemon: Identifiable {
@@ -31,4 +31,3 @@ extension Pokemon: Identifiable {
         UUID().uuidString
     }
 }
-

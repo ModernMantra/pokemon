@@ -17,5 +17,5 @@ struct PokemonApp: App {
             HomepageView()
         }
     }
-    
+
 }

@@ -14,7 +14,7 @@ struct PokemonDetails: Codable {
     let forms: [Species]
     let gameIndices: [GameIndex]
     let height: Int
-    let heldItems: [String]
+    let heldItems: [HeldItem]
     let id: Int
     let isDefault: Bool
     let locationAreaEncounters: String
@@ -42,6 +42,29 @@ struct PokemonDetails: Codable {
         case pastTypes = "past_types"
         case species, sprites, stats, types, weight
     }
+    
+}
+
+// MARK: - HeldItem
+
+struct HeldItem: Codable {
+    
+    let item: Species
+    let versionDetails: [VersionDetail]
+
+    enum CodingKeys: String, CodingKey {
+        case item
+        case versionDetails = "version_details"
+    }
+    
+}
+
+// MARK: - VersionDetail
+
+struct VersionDetail: Codable {
+    
+    let rarity: Int
+    let version: Species
     
 }
 

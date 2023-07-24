@@ -10,7 +10,7 @@ import Foundation
 enum PokemonRequest: RequestBuilder {
     
     case allItems
-    case details(forItem: Int)
+    case details(forItem: String)
     
     var path: String {
         switch self {

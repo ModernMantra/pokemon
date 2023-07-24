@@ -10,30 +10,21 @@ import SwiftUI
 struct HomepageView: View {
     
     @StateObject var viewModel = HomepageViewModel()
+    
     @State private(set) var isPresented: Bool = false
-    @State private var selected: Pokemon?
+    @State private(set) var selected: Pokemon?
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                ForEach(viewModel.pokemons, id: \.name) { item in
-                    MaterialCardView(title: item.name.capitalized, subtitle: item.url)
-                        .onTapGesture {
-                            selected = item
-                            isPresented.toggle()
-                        }
-                }
-                .sheet(isPresented: Binding(
-                    get: { isPresented },
-                    set: { isPresented = $0 }
-                )) {
-                    if let selected = selected {
-                        ActionSheet(pokemon: selected)
-                    }
-                }
-            }
+            itemsListView
+                .navigationTitle("Pokemons")
         }
         .onAppear{
+            Task {
+                await viewModel.fetchData()
+            }
+        }
+        .observeError($viewModel.error) {
             Task {
                 await viewModel.fetchData()
             }
@@ -41,18 +32,27 @@ struct HomepageView: View {
     }
 }
 
-struct ActionSheet: View {
+// MARK: - Subviews -
+
+fileprivate extension HomepageView {
     
-    @State var pokemon: Pokemon
-    
-    var body: some View {
-        VStack {
-            Text("\(pokemon.name)")
-        }
-        .background(Color.blue.opacity(0.3))
-        .onAppear{
-            Task {
-                await HomepageViewModel().getDetailsFor(item: 2)
+    @ViewBuilder
+    var itemsListView: some View {
+        ScrollView {
+            ForEach(viewModel.pokemons, id: \.name) { item in
+                MaterialCardView(title: item.name.capitalized, subtitle: item.url)
+                    .onTapGesture {
+                        selected = item
+                        isPresented.toggle()
+                    }
+            }
+            .sheet(isPresented: Binding(
+                get: { isPresented },
+                set: { isPresented = $0 }
+            )) {
+                if let selected = selected {
+                    PokemonDetailsView(selectedPokemon: selected)
+                }
             }
         }
     }

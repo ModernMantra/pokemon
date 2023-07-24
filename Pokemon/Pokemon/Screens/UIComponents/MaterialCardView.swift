@@ -51,17 +51,12 @@ fileprivate extension MaterialCardView {
     
     @ViewBuilder
     var titleView: some View {
-        Text(title)
-            .font(.title)
-            .fontWeight(.bold)
-            .foregroundColor(.Text.primary)
+        TitleText(text: title)
     }
     
     @ViewBuilder
     var subtitleView: some View {
-        Text(subtitle)
-            .font(.subheadline)
-            .foregroundColor(.Text.secondary)
+        SubtitleText(text: subtitle)
     }
     
 }

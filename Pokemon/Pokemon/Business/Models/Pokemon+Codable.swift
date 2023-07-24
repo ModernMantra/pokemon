@@ -22,6 +22,10 @@ struct Pokemon: Codable {
     let url: String
 }
 
+extension Pokemon: Equatable {
+    
+}
+
 extension Pokemon: Identifiable {
     var id: String {
         UUID().uuidString

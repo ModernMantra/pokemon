@@ -221,10 +221,8 @@
 		447023022A6D4A50003A10AE /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				447023032A6D4A65003A10AE /* MaterialCardView.swift */,
-				447023112A6DE7F2003A10AE /* TitleText.swift */,
-				447023132A6DEB40003A10AE /* SubtitleView.swift */,
-				447023152A6DEC25003A10AE /* SubtitleText.swift */,
+				44A03EE72A6EAF1600E6E5B1 /* Molecules */,
+				44A03EE62A6EAF1100E6E5B1 /* Atoms */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -261,6 +259,24 @@
 				44A03EE42A6EAEA700E6E5B1 /* ErrorViewModifier.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		44A03EE62A6EAF1100E6E5B1 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				447023152A6DEC25003A10AE /* SubtitleText.swift */,
+				447023112A6DE7F2003A10AE /* TitleText.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		44A03EE72A6EAF1600E6E5B1 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				447023032A6D4A65003A10AE /* MaterialCardView.swift */,
+				447023132A6DEB40003A10AE /* SubtitleView.swift */,
+			);
+			path = Molecules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

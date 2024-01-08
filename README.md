@@ -2,7 +2,7 @@
 [![License][license-image]][license-url]
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 
-# Pokemon Coding Task
+# Pokemon API usage with SwiftUI
 
 The app consist of:
 * Navigation
